@@ -4,6 +4,6 @@ public enum TipoDeMasa {
     normal,
     integral,
     fina,
-    masapan,
+   pan,
 
 }

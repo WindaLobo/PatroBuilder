@@ -1,6 +1,6 @@
 package Tipos;
 
-public enum TipoDePizza {
+public enum TamañoPizza {
     familiar,
     mediana,
 

@@ -1,9 +1,8 @@
 package Tipos;
 
-public enum TipodeSalsa {
+public enum TipoDeSalsa {
     salsaDeBarbacoa,
     salsaDeTomate,
     salsaSinGluteo,
-
-
+    salsaCarbonara
 }
