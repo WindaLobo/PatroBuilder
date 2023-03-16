@@ -16,8 +16,9 @@ public class Pizza {
     private boolean champiñones;
     private boolean jamon;
     private TipoDeEnvio recojida;
+    private  String mensajeCaja;
 
-    public Pizza(TipoDeMasa masa, boolean relleno, TamañoPizza size, boolean salsa, TipoDeSalsa tipoDeSalsa, boolean cebolla, boolean sinGluten, boolean extraQueso, boolean piña, boolean champiñones, boolean jamon, TipoDeEnvio recojida) {
+    public Pizza(TipoDeMasa masa, boolean relleno, TamañoPizza size, boolean salsa, TipoDeSalsa tipoDeSalsa, boolean cebolla, boolean sinGluten, boolean extraQueso, boolean piña, boolean champiñones, boolean jamon, TipoDeEnvio recojida, String mensajeCaja) {
         this.masa = masa;
         this.relleno = relleno;
         this.size = size;
@@ -30,6 +31,7 @@ public class Pizza {
         this.champiñones = champiñones;
         this.jamon = jamon;
         this.recojida = recojida;
+        this.mensajeCaja = mensajeCaja;
     }
 
     public Pizza() {
@@ -37,7 +39,17 @@ public class Pizza {
         tipoDeSalsa = TipoDeSalsa.salsaDeTomate;
         size = TamañoPizza.pequena;
         recojida = TipoDeEnvio.tienda;
+        mensajeCaja =" ";
 
+
+    }
+
+    public String getMensajeCaja() {
+        return mensajeCaja;
+    }
+
+    public void setMensajeCaja(String mensajeCaja) {
+        this.mensajeCaja = mensajeCaja;
     }
 
     public boolean isSalsa() {
@@ -149,6 +161,6 @@ public class Pizza {
                 "piña : " + piña + "\n" +
                 "champiñones : " + champiñones + "\n" +
                 "jamon : " + jamon + "\n" +
-                "Tipo de recojida : " + recojida + "\n";
+                "Tipo de recojida : " + recojida + "\n" ;
     }
 }

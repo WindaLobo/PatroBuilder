@@ -1,41 +1,54 @@
-import Tipos.TipoDeEnvio;
-import Tipos.TipoDeMasa;
-import Tipos.TamañoPizza;
-import Tipos.TipoDeSalsa;
+import javax.swing.*;
 
 public class Main {
     public static void main(String[] args) {
 
-        System.out.println("\n *** Objecto sin builder ****  \n");
-        Pizza aSuMedida = new Pizza(TipoDeMasa.fina, true, TamañoPizza.familiar, true, TipoDeSalsa.salsaSinGluteo, true, false, true, false, true, true, TipoDeEnvio.paraLlevar);
-        System.out.println(aSuMedida.toString());
+        int opciones = 0;
+        do {
+            opciones = Integer.parseInt(JOptionPane.showInputDialog("Seleciona la pizzeria : \n1 Telepizza  \n2 DominoPizza \n3 Salir"));
+            switch (opciones) {
+                case 1:
+                    Telepizza telepizza = new Telepizza();
+                    cocinarPizza(telepizza);
+                    break;
+                case 2:
+                    DominosPizza dominosPizza=new DominosPizza();
+                    cocinarPizza(dominosPizza);
+                    break;
 
-        Pizza pizzaBasica = new BuilderPizzas()
-                .build();
-        System.out.println(" *** Objecto con builder ***  \n");
+                default:
 
-        System.out.println("Pizza básica :\n" + pizzaBasica.toString());
+                    System.out.println(" ********* Fin del programa ******** ");
 
-        Pizza pizzaCarbonara = new BuilderPizzas()
-                .setSalsa(TipoDeSalsa.salsaDeBarbacoa)
-                .setCebolla()
-                .setSize(TamañoPizza.familiar)
-                .setExtraQueso()
-                .build();
+            }
 
-        System.out.println("Pizza carbonara :\n" + pizzaCarbonara.toString());
+        } while (opciones < 3);
 
-        Pizza pizzaBacon = new BuilderPizzas()
-                .setSalsa(TipoDeSalsa.salsaDeBarbacoa)
-                .setCebolla()
-                .setExtraQueso()
-                .setSize(TamañoPizza.familiar)
-                .setJamon()
-                .setRecojida(TipoDeEnvio.paraLlevar)
-                .build();
 
-        System.out.println("Pizza bacon :\n" + pizzaBacon.toString());
     }
 
+    private static void cocinarPizza(IPizzeria pizzeria) {
+
+
+        System.out.println("El tiempo d e espera es : " + pizzeria.prepararPizza());
+
+        System.out.println("Estamos preparando tu pizza ...");
+
+        Pizza miPizza = null;
+        do {
+            miPizza = pizzeria.pizzaLista();
+        }
+        while (miPizza == null);
+
+        System.out.println("Tu pizza esta lista: \n" + miPizza);
+
+    }
+
+
 }
+
+
+
+
+
 

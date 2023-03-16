@@ -16,11 +16,15 @@ classDiagram
     
       BuilderPizza "1" *-- "1..*" Pizza : association
           
-      main "1" *-- "1..*" BuilderPizza : association
+          
+      Telepizza "1" *-- "1..*" BuilderPizza : association
+       DominosPizza "1" *-- "1..*" BuilderPizza : association
+     
+       main "1" *-->"1..*" IPizzeria : association
       
            class main{
-       + Pizza creadaConBuilder = new BuilderPizzas().build();
-       +Pizza sintaxisEncadenada = new BuilderPizzas()
+       + IPizzeria telepizza = new Telepizza();
+       +IPizzeria dominoPizza = new DominosPizza()
      
       }
       
@@ -60,6 +64,25 @@ classDiagram
         +getter()
         +setter()
            } 
+              <<Interface>>IPizzeria
+           class IPizzeria{
+             String prepararPizza();
+             Pizza  pizzaLista();
+           
+           }
+           IPizzeria <|.. Telepizza: implements
+           class Telepizza{
+            String prepararPizza();
+             Pizza  pizzaLista();
+           
+           }
+            IPizzeria <|.. DominosPizza: implements
+           class DominosPizza{
+            String prepararPizza();
+             Pizza  pizzaLista();
+           
+           }
+           
     
 ````
 

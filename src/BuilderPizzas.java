@@ -71,6 +71,11 @@ public class BuilderPizzas {
         _pizza.setRecojida(recojida);
         return this;
     }
+    public BuilderPizzas setMensajeCaja(String mensajeCaja) {
+        _pizza.setMensajeCaja(mensajeCaja);
+        return this;
+    }
+
 
     public Pizza build() {
 
