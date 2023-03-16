@@ -31,7 +31,7 @@ public class Main {
                 .setExtraQueso()
                 .setSize(TamañoPizza.familiar)
                 .setJamon()
-                .setRecojida(TipoDeEnvio.paraLlevar)
+                .setRecogida(TipoDeEnvio.paraLlevar)
                 .build();
 
         System.out.println("Pizza bacon :\n" + pizzaBacon.toString());

@@ -67,8 +67,8 @@ public class BuilderPizzas {
         return this;
     }
 
-    public BuilderPizzas setRecojida(TipoDeEnvio recojida) {
-        _pizza.setRecojida(recojida);
+    public BuilderPizzas setRecogida(TipoDeEnvio recogida) {
+        _pizza.setRecogida(recogida);
         return this;
     }
 

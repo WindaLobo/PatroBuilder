@@ -15,9 +15,9 @@ public class Pizza {
     private boolean piña;
     private boolean champiñones;
     private boolean jamon;
-    private TipoDeEnvio recojida;
+    private TipoDeEnvio recogida;
 
-    public Pizza(TipoDeMasa masa, boolean relleno, TamañoPizza size, boolean salsa, TipoDeSalsa tipoDeSalsa, boolean cebolla, boolean sinGluten, boolean extraQueso, boolean piña, boolean champiñones, boolean jamon, TipoDeEnvio recojida) {
+    public Pizza(TipoDeMasa masa, boolean relleno, TamañoPizza size, boolean salsa, TipoDeSalsa tipoDeSalsa, boolean cebolla, boolean sinGluten, boolean extraQueso, boolean piña, boolean champiñones, boolean jamon, TipoDeEnvio recogida) {
         this.masa = masa;
         this.relleno = relleno;
         this.size = size;
@@ -29,14 +29,14 @@ public class Pizza {
         this.piña = piña;
         this.champiñones = champiñones;
         this.jamon = jamon;
-        this.recojida = recojida;
+        this.recogida = recogida;
     }
 
     public Pizza() {
         masa = TipoDeMasa.normal;
         tipoDeSalsa = TipoDeSalsa.salsaDeTomate;
         size = TamañoPizza.pequena;
-        recojida = TipoDeEnvio.tienda;
+        recogida = TipoDeEnvio.tienda;
 
     }
 
@@ -56,12 +56,12 @@ public class Pizza {
         this.masa = masa;
     }
 
-    public TipoDeEnvio getRecojida() {
-        return recojida;
+    public TipoDeEnvio getRecogida() {
+        return recogida;
     }
 
-    public void setRecojida(TipoDeEnvio recojida) {
-        this.recojida = recojida;
+    public void setRecogida(TipoDeEnvio recogida) {
+        this.recogida = recogida;
     }
 
     public boolean isJamon() {
@@ -149,6 +149,6 @@ public class Pizza {
                 "piña : " + piña + "\n" +
                 "champiñones : " + champiñones + "\n" +
                 "jamon : " + jamon + "\n" +
-                "Tipo de recojida : " + recojida + "\n";
+                "Tipo de recogida : " + recogida + "\n";
     }
 }
