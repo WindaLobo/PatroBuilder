@@ -1,16 +1,29 @@
-import Tipos.TipoDeMasa;
-import Tipos.TipoDePizza;
-import Tipos.TipodeSalsa;
+import Marcas.Marcas;
 
 public class Main {
-    public static void main(String[] args) {
-        Pizzas pizzas1 = new Pizzas(TipoDeMasa.fina, true, TipoDePizza.familiar, TipodeSalsa.salsaSinGluteo, true, false, true, false, true, true);
-        System.out.println("La primera pizza: \n" + pizzas1.toString());
+    static IFabrica Fabrica;
 
-        Pizzas pizzas2 = new Pizzas(TipoDeMasa.integral, true, TipoDePizza.mediana, TipodeSalsa.salsaDeBarbacoa, false, true, false, false, true, false);
-        System.out.println("La segunda pizza: \n" + pizzas2.toString());
+    public static void main(String[] args) throws Exception {
+        //Builder
+        System.out.println("Builder : ");
+        System.out.println("Citroen : ");
+        FabricaCitroen coche = new FabricaCitroen();
+        System.out.println(" El coche es : \n " + coche.fabricar());
+        System.out.println("Toyota : ");
+        FabricaToyota coche2 = new FabricaToyota();
+        System.out.println(" El coche es : \n " + coche2.fabricar());
 
+        //Patron Factory
+        System.out.println("Con Patron  Factory");
+        Fabrica = FactoryCoche.getFabrica(Marcas.Citroen);
+        System.out.println(Fabrica.fabricar());
 
+        Fabrica = FactoryCoche.getFabrica(Marcas.Toyota);
+        System.out.println(Fabrica.fabricar());
     }
 
 }
+
+
+
+
