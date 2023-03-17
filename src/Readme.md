@@ -3,7 +3,7 @@
 ___
 
 ### ¿Cual es la función del patrón builder?
-
+>La funcion del patron builder es q te permite construir objetos complejos paso a paso.
 >En este ejemplo, la clase FactoryCoche utiliza el patrón Factory para crear un objeto Coche utilizando el patrón Builder. 
 >La función fabricar() toma como parámetros los valores requeridos para construir el objeto Coche y devuelve
 >Un nuevo objeto Coche con esos valores configurados utilizando el patrón Builder.
